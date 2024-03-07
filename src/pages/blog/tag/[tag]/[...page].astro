@@ -32,7 +32,7 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags))]
     {
       tags.map((t) => (
         <li>
-          <a href={`/blog/tag/${t}`} class={t === tag ? 'current' : ''}>
+          <a href={`/astro-page/blog/tag/${t}`} class={t === tag ? 'current' : ''}>
             {t}
           </a>
         </li>

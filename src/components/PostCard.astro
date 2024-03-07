@@ -6,7 +6,7 @@ const { post } = Astro.props
 ---
 
 <li class='post-card'>
-  <a href={`/blog/${post.slug}/`}>
+  <a href={`/astro-page/blog/${post.slug}/`}>
     <Image src={post.data.thumbnail.src} widths={[720, post.data.thumbnail.src.width]} sizes={`720px`} alt={post.data.thumbnail.alt} />
     <h2 class='title'>{post.data.title}</h2>
     <p class='excerpt'>
