@@ -4,11 +4,11 @@ import mdx from '@astrojs/mdx'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://balazsfekete.github.io',
-  base: '/astro-site',
+  base: '/astro-page',
   integrations: [mdx()],
   redirects: {
-    '/': '/blog',
-    '/blog/1': '/blog',
+    '/': 'astro-page/blog',
+    '/blog/1': 'astro-page/blog',
   },
   build: {
     inlineStylesheets: 'never',
