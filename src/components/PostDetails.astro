@@ -1,0 +1,18 @@
+---
+import FormattedDate from './FormattedDate.astro'
+
+const { post } = Astro.props
+---
+
+<div class='post-details'>
+  <FormattedDate date={post.data.pubDate} />
+  <ul class='tags'>
+    {
+      post.data.tags.map((tag: string) => (
+        <li>
+          <a href={`/blog/tag/${tag}`}>{tag}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

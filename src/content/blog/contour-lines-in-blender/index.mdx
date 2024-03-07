@@ -1,0 +1,51 @@
+---
+title: Contour lines in Blender
+excerpt: 'Visualising terrain contour lines with even line thickness using Blender materials.'
+pubDate: '2024-02-28'
+thumbnail: { src: './thumbnail.png', alt: 'Placeholder' }
+tags: ['blender', 'material nodes']
+---
+
+We will be generating contour lines inside a Blender material. This can visualise the elevation of landscape meshes or be used in combination with other techniques to achieve various visual effects. I will assume basic familiarity with Blender shader nodes.
+
+## Generating contour lines
+
+{/* Take position */}
+Enter the Geometry shade node. This will provide all the data we need for the contour lines.
+To star off we get the position vector. We are interested in the height, so let's extract the Z component of the vector.
+
+{/* Wrap with fraction and threshold */}
+These values go beyond 1 clipping into white, and below 0 clipping into black. We can use a periodic function, like Fraction to bring those values back into 0-1 range. Applying a threshold filter with Less than we already have a first attempt at contour lines.
+
+{/* Use round instead */}
+However at a closer look the contour lines are not centred to, they sit above the elevation levels.
+
+{/* Multiply for vertical scale */}
+
+## Making them even thickness in world space
+
+Describe problem
+(Visual)
+
+Solution is normal
+Describe solution
+(Diagram)
+
+
+Explain angle calculation
+(Diagram)
+
+Implement the solution
+(Nodes screenshot)
+
+Explain what we achieved
+(Demonstrate with video)
+
+
+## Making them even thickness in view space
+
+We want to find out the angle between the Normal and Incoming vectors. 
+To find out the angle between the Normal and Incoming vectors we simply take their dot product. Since both are normalised, the result will be the cosine of the angle we are looking for.
+
+
+

@@ -1,0 +1,17 @@
+---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
+type Props = {
+  src: string | ImageMetadata
+  alt: string
+  title: string
+}
+
+const { src, alt, title } = Astro.props
+---
+
+<figure>
+  {typeof src === 'string' ? <img src={src} alt={alt} /> : <Image {src} {alt} widths={[720, src.width]} sizes={`720px`} />}
+  {title && <figcaption class='text-center'>{title}</figcaption>}
+</figure>

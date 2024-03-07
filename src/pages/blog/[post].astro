@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PostDetails from '@/components/PostDetails.astro'
+import Figure from '@/components/Figure.astro'
+
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return posts.map((post) => ({
+    params: { post: post.slug },
+    props: post,
+  }))
+}
+
+const post = Astro.props
+const { Content } = await post.render()
+---
+
+<BaseLayout title={post.data.title} description={post.data.excerpt} keywords={post.data.tags}>
+  <article>
+    <h1>{post.data.title}</h1>
+    <PostDetails post={post} />
+    <Content components={{ img: Figure }} />
+  </article>
+</BaseLayout>

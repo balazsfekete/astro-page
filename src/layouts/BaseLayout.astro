@@ -1,0 +1,52 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import '@/styles/global.css'
+
+const { title, description, keywords } = Astro.props
+const pathname = new URL(Astro.request.url).pathname
+const today = new Date()
+---
+
+<html lang='en'>
+  <head>
+    <title>{title}</title>
+    <meta charset='utf-8' />
+    {description ? <meta name='description' content={description} /> : null}
+    {keywords ? <meta name='keywords' content={keywords.join(', ')} /> : null}
+    <meta name='author' content='Balázs Fekete' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='stylesheet' href='/fonts/Inter/inter.css' />
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class='border-bottom'>
+      <header>
+        <a href='/'> Balázs Fekete</a>
+        <nav aria-label='Primary navigation'>
+          <a class={pathname.startsWith('/blog') ? 'current' : ''} href='/blog'>Blog</a>
+          <a class={pathname === '/about' ? 'current' : ''} href='/about'>About</a>
+        </nav>
+      </header>
+    </div>
+    <main>
+      <slot />
+    </main>
+    <div class='border-top'>
+      <footer>
+        &copy; {today.getFullYear()} Balázs Fekete
+        <ul>
+          <li>
+            <a href='https://github.com/balazsfekete'>GitHub</a>
+          </li>
+          <!-- <li>
+              <a href='https://twitter.com/fktbalazs'>Twitter</a>
+            </li> -->
+          <li>
+            <a href='https://www.linkedin.com/in/balazsfkt/'>LinkedIn</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

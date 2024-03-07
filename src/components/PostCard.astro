@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+import PostDetails from './PostDetails.astro'
+
+const { post } = Astro.props
+---
+
+<li class='post-card'>
+  <a href={`/blog/${post.slug}/`}>
+    <Image src={post.data.thumbnail.src} widths={[720, post.data.thumbnail.src.width]} sizes={`720px`} alt={post.data.thumbnail.alt} />
+    <h2 class='title'>{post.data.title}</h2>
+    <p class='excerpt'>
+      {post.data.excerpt}
+    </p>
+  </a>
+  <PostDetails post={post} />
+</li>

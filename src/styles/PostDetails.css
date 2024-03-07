@@ -1,0 +1,28 @@
+.post-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.post-details:first-child {
+  flex-shrink: 0;
+}
+
+.post-details ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.5rem;
+  list-style: none;
+}
+
+.post-details a {
+  text-decoration: none;
+}
+
+.post-details a:hover {
+  text-decoration: underline;
+}

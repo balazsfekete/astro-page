@@ -1,0 +1,77 @@
+article {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+article p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+article h1 {
+  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  margin: 3rem 0;
+}
+
+article h2 {
+  font-size: 1.6rem;
+  margin: 2rem 0 1rem 0;
+}
+
+article figure {
+  padding: 0 1rem;
+  margin: 2rem 0;
+}
+
+article figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+article figcaption {
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  font-style: italic;
+  font-weight: 500;
+}
+
+article .astro-code {
+  margin: 2rem 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+article code {
+  width: 0;
+}
+
+article video {
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  margin: 2rem 0;
+}
+
+article svg {
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  margin: 2rem 0;
+}
+
+article blockquote {
+  font-style: italic;
+  padding: 0 1rem;
+  margin: 2rem 0;
+}
+
+article blockquote p:before {
+  content: '“';
+}
+article blockquote p:after {
+  content: '”';
+}

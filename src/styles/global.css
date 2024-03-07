@@ -1,0 +1,56 @@
+@import url(BaseLayout.css);
+@import url(article.css);
+@import url(PaginatedPosts.css);
+@import url(PostCard.css);
+@import url(PostDetails.css);
+@import url(TagFilter.css);
+
+:root {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1, 'dlig' 1;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: 'InterVariable', sans-serif;
+    font-optical-sizing: auto;
+  }
+}
+
+:root {
+  color-scheme: light dark;
+  --background: hsl(0, 0%, 95%);
+  --text: hsl(0, 0%, 20%);
+  --text-dim: hsl(0, 0%, 60%);
+
+  /* --background: hsl(205, 10%, 90%);
+  --text: hsl(205, 90%, 15%);
+  --text-dim: hsl(205, 20%, 50%); */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: hsl(0, 0%, 10%);
+    --text: hsl(0, 0%, 80%);
+    --text-dim: hsl(0, 0%, 50%);
+
+    /* --background: hsl(205, 90%, 15%);
+    --text: hsl(205, 20%, 80%);
+    --text-dim: hsl(205, 20%, 50%); */
+  }
+}
+
+html {
+  scrollbar-gutter: stable;
+  color: var(--text);
+  background-color: var(--background);
+  font-size: 15px;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+}

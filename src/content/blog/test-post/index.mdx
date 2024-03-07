@@ -1,0 +1,60 @@
+---
+title: Test post
+excerpt: 'A look at generating terrain contour lines with even line thickness.'
+pubDate: '08/06/2023'
+thumbnail: { src: './thumbnail.png', alt: 'Placeholder' }
+tags: ['blender', 'shader nodes']
+---
+
+Here is a collection of different type of content to test the capabilities of the blog post rendering. You will see images, videos, and even interactive SVG; all the type of media I would want to include in future posts.
+
+![cover image](./thumbnail.png 'This is an image caption')
+
+
+## Hello, I am a heading
+Images with transparency can have a shadow which will affect both the background of the light and dark themes. That's right, the site follows whether you set your OS preferences for light or dark themes.
+
+![cover image](./02.png)
+
+SVG diagrams are great. Try and hover/tap parts of the equations and see how the corresponding geometry gets highlighted. All in CSS, no JavaScript used, thanks to the recently  introduced  `:has` CSS selector.
+
+import diagram1 from './angle-between-vector-and-xy-plane.svg?raw'
+
+
+<Fragment set:html={diagram1} />
+
+And another diagram. I plan to use these in a blog post about generating contour lines in a Blender material. This one has __10 hover__ areas. Can you find them all? _(Hint: thy are all in the equation)_
+
+import diagram2 from './angle-between-incoming-and-normal-vectors.svg?raw'
+
+<Fragment set:html={diagram2} />
+
+Oh, and here is a video using the browser's built-in player. Video files are not processed by Astro during buid time. They are copied over to the dist folder without optimisation, so best to prepare them in with a decent compression algorithm. I use FFmpeg to encode them in H.264.
+
+import video from './video.mp4'
+
+<video controls>
+  <source src={video} type="video/mp4"/>  
+</video>
+
+import contour from './contour.mp4'
+
+<video controls loop>
+  <source src={contour} type="video/mp4"/>  
+</video>
+
+Markdown markup will also translate into code blocks with appropriate styling for the language. It's powered by the built-in Shiki syntax highlighter. The code below is in JavaScript:
+
+```js
+const array1 = [1, 4, 9, 16];
+
+// Pass a function to map
+const map1 = array1.map((x) => x * 2);
+
+console.log(map1);
+// Expected output: Array [2, 8, 18, 32]
+```
+
+I end my post with a quote from a well-known literary work that carries a message just as relevant today as it was at the time it was written:
+
+> Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.

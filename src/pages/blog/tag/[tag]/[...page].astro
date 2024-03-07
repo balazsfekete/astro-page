@@ -1,0 +1,43 @@
+---
+const title = 'Tags'
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PaginatedPosts from '@/components/PaginatedPosts.astro'
+
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection('blog')
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))]
+
+  return tags.flatMap((tag: string, tags) => {
+    const filteredPosts = posts.filter((post) => post.data.tags?.includes(tag))
+    const sortedPosts = filteredPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    return paginate(sortedPosts, {
+      params: { tag, tags },
+      pageSize: 5,
+    })
+  })
+}
+
+const { page } = Astro.props
+const { tag } = Astro.params
+
+const posts = await getCollection('blog')
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))]
+---
+
+<BaseLayout title={title}>
+  <ul class='tag-filter'>
+    {
+      tags.map((t) => (
+        <li>
+          <a href={`/blog/tag/${t}`} class={t === tag ? 'current' : ''}>
+            {t}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <PaginatedPosts page={page} />
+</BaseLayout>
