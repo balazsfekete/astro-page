@@ -22,10 +22,10 @@ const today = new Date()
   <body>
     <div class='border-bottom'>
       <header>
-        <a href='/astro-page/blog'> Balázs Fekete</a>
+        <a href='/astro-page/blog/'> Balázs Fekete</a>
         <nav aria-label='Primary navigation'>
-          <a class={pathname.startsWith('/astro-page/blog') ? 'current' : ''} href='/astro-page/blog'>Blog</a>
-          <a class={pathname === '/astro-page/about' ? 'current' : ''} href='/astro-page/about'>About</a>
+          <a class={pathname.startsWith('/astro-page/blog/') ? 'current' : ''} href='/astro-page/blog/'>Blog</a>
+          <a class={pathname === '/astro-page/about/' ? 'current' : ''} href='/astro-page/about/'>About</a>
         </nav>
       </header>
     </div>
