@@ -44,7 +44,7 @@ article .astro-code {
   overflow-x: scroll;
 }
 
-article code {
+article .astro-code code {
   width: 0;
   display: block;
 }
